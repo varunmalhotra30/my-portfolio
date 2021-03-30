@@ -16,12 +16,13 @@
 </head>
 
 <body>
+
+  
   <!-- Header Section -->
   <!-- Logo -->
-  <picture class="wrap">
-    <img src="./images/vm.svg" alt="Varun Malhotra">
-    
-  </picture>
+   <picture class="wrap">
+    <object data="images/vm.svg" type="image/svg+xml" id="obj"></object>
+  </picture> 
 
   <header id="header">
     <div class="main_nav">
@@ -107,17 +108,95 @@
 <!-- Portfolio Section -->
 <section id="portfolio">
     <div class="container">
-    <h1>My Portfolio</h1>
+    <h1>My Work</h1>
 
-    
-        </div>
+    <ul class="gallery">
 
+      <li class="gallery-item">
+        <a href="#"><img class="project-image" src="./images/mmbd.png" alt="MMBD"/>
+          <div class="project-text">
+            <div class="project-text__title">Movie Site</div>
+            <div class="project-text__facts">
+              <p>This is a movie site which is created with HTML, CSS and JavaScript.
+  The movies discrptions and images are retrieved from database using PHP and SQL. Foudation is being used to make the site responsive.</p>
+  <button> open project </button>
+               </div> 
+          </div>
+        </a>
+      </li>
 
+      <li class="gallery-item">
+        <a href="#"><img class="project-image" src="./images/restAPP.png" alt="Restaurant"/>
+          <div class="project-text">
+            <div class="project-text__title">Restaurant App</div>
+            <div class="project-text__facts">
+            
+              <p>This is a restaurant app which is built using html,css and javascript.
+                Gsap3 is used to create the animations and make the app more effective.
+                Three restaurants:Ceviche,Heart and stone bristo and crispy.
+              </p> 
+  <button> open project </button>
+               </div> 
+          </div>
+        </a>
+      </li>
 
+      <li class="gallery-item">
+        <a href="#"><img class="project-image" src="./images/Samsung-Galaxy-Logo.png" alt="MMBD"/>
+          <div class="project-text">
+            <div class="project-text__title">Samsung</div>
+            <div class="project-text__facts">
+              <p>This is the simple samsung site page. built using html,css.
+                Css grid is used to make the site responsive.
+                This site has three pages all of the them are just static page which is retrieving static data.
+              </p>
+  <button> open project </button>
+               </div> 
+          </div>
+        </a>
+      </li>
 
-    
+      <li class="gallery-item">
+        <a href="#"><img class="project-image" src="./images/mmbd.png" alt="MMBD"/>
+          <div class="project-text">
+            <div class="project-text__title">Movie Site</div>
+            <div class="project-text__facts">
+              <p>This is a movie site which is created with HTML, CSS and JavaScript.
+  The movies discrptions and images are retrieved from database using PHP and SQL. Foudation is being used to make the site responsive.</p>
+  <button> open project </button>
+               </div> 
+          </div>
+        </a>
+      </li>
 
-    </div>
+      <li class="gallery-item">
+        <a href="#"><img class="project-image" src="./images/mmbd.png" alt="MMBD"/>
+          <div class="project-text">
+            <div class="project-text__title">Movie Site</div>
+            <div class="project-text__facts">
+              <p>This is a movie site which is created with HTML, CSS and JavaScript.
+  The movies discrptions and images are retrieved from database using PHP and SQL. Foudation is being used to make the site responsive.</p>
+  <button> open project </button>
+               </div> 
+          </div>
+        </a>
+      </li>
+
+      <li class="gallery-item">
+        <a href="#"><img class="project-image" src="./images/mmbd.png" alt="MMBD"/>
+          <div class="project-text">
+            <div class="project-text__title">Movie Site</div>
+            <div class="project-text__facts">
+              <p>This is a movie site which is created with HTML, CSS and JavaScript.
+  The movies discrptions and images are retrieved from database using PHP and SQL. Foudation is being used to make the site responsive.</p>
+  <button> open project </button>
+               </div> 
+          </div>
+        </a>
+      </li>
+  
+    </ul>
+
 
   </section>
 
@@ -126,47 +205,39 @@
   <section id="contact">
     <div class="container">
       <h1>Contact</h1>
-      <div class="block">
-        <a href="mailto:ian.r.resurreccion@gmail.com">
-          <div class='icon fa fa fa-envelope' id='form-container'>
+        <form action="sendemail.php" method="post">
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            </div>
           </div>
-        </a>
-      </div>
-      <div class="main-wrapper">
-        <div class="button">
-          <i class="material-icons">add</i>
-        </div>
-        <div class="main-wrapper-inside">
-          <img src="http://ianresurreccion.com/portfolio/images/ian_avatar_circle.png">
-        </div>
-        <div class="button-wrapper first">
-          <div class="button-inside first">
-            <a href="https://twitter.com/ResurreccionIan">
-              <i class="fa fa-twitter"></i>
-            </a>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            </div>
           </div>
-        </div>
-        <div class="button-wrapper second">
-          <div class="button-inside second">
-            <a href="https://www.linkedin.com/in/christian-resurreccion-39373453/">
-              <i class="fa fa-linkedin"></i>
-            </a>
+
+          
+          <div class="row">
+            <div class="col-25">
+              <label for="email">Email</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="email" name="email" placeholder="Your emaname..">
+            </div>
           </div>
-        </div>
-        <div class="button-wrapper third">
-          <div class="button-inside third">
-            <a href="https://www.instagram.com/ian_resurreccion/">
-              <i class="fa fa-instagram"></i>
-            </a>
+          
+  
+          <div class="row">
+            <input type="submit" value="Submit">
           </div>
-        </div>
-        <div class="button-wrapper fourth">
-          <div class="button-inside fourth">
-            <a href="https://www.facebook.com/ian.resurreccion.33">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
     </div>
@@ -185,27 +256,10 @@
   <script src="js/debug.addIndicators.min.js"></script>
 
   <script src="js/jquery.cbpContentSlider.min.js"></script>
-  <script>
-    $(function () {
-      /*
-      - how to call the plugin:
-      $( selector ).cbpContentSlider( [options] );
-      - options:
-      {
-        // default transition speed (ms)
-        speed : 500,
-        // default transition easing
-        easing : 'ease-in-out',
-        // current item's index
-        current : 0
-      }
-      - destroy:
-      $( selector ).cbpContentSlider( 'destroy' );
-      */
-
-      $('#cbp-contentslider').cbpContentSlider();
-    });
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/EasePack.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

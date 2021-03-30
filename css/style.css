@@ -2,6 +2,104 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    --black: #232020;
+    --white: #f1f0ea;
+    --main-height: 350px;
+    --main-width: 470px; 
+  }
+object{
+    background-color: black;
+}
+  .gallery {
+    z-index: -1;
+    max-width: 1200px;
+    max-width: var((--main-width * 3) + 30px );
+    margin: 10px auto;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .gallery-item {
+    position: relative;
+    display: inline-block;
+    height: var(--main-height);
+    width: var(--main-width);
+    margin: 12px;
+    border-radius: 3px;
+    overflow:hidden;
+  }
+  
+  .project-image {
+    height: var(--main-height);
+    width: var(--main-width);
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+  }
+  
+  .project-text {
+    position: relative;
+    top: -43px;
+    display: inline-block;
+    width: 100%;
+    height: 350px;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    font: 400 16px "Montserrat";
+    color: var(--white);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .project-text__title {
+    font-weight: 100;
+    letter-spacing: 1.2px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    transition: all 0.4s ease;
+  }
+  
+  .project-text__facts {
+    position: relative;
+    top: 0;
+    height: var(--main-height);
+    width: var(--main-width);
+    padding: 10px 50px;
+    font: 400 15px "Montserrat";
+    text-align: left;
+    line-height: 23px;
+    letter-spacing: 0.4px;
+    opacity: 0;
+    transition: all 0.9s ease;
+    transition-delay: 0.2s;
+  }
+  
+  /** HOVERS **/
+  .gallery-item:hover .project-image {
+    transform: scale(2.5) rotate(15deg);
+  
+  }
+  
+  .gallery-item:hover .project-text {
+    top: -350px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .gallery-item:hover .project-text__title {
+    font-weight: 700;
+    padding-top: 10%;
+    font-size: 30px;
+    margin-bottom: -5px;
+  }
+  
+  .gallery-item:hover .project-text__facts {
+    opacity: 1;
+  }
+  
+
 section {
     box-shadow: 3px -3px 8px rgba(0, 0, 0, 0.808);
 }
@@ -398,122 +496,48 @@ color: #ffffff;
 }
 
 /* Clearing */
-.container:after,
-.row:after,
-.u-cf {
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+
+  .row {margin: 0 -5px;}
+  
+
+  .row:after {
     content: "";
     display: table;
     clear: both;
-}
+  }
 
-.column,
-.columns {
-    width: 100%;
-    float: left;
-    box-sizing: border-box;
-}
-
-.container {
-    width: 95%;
-}
-
-.column,
-.columns {
-    margin-left: 4%;
-}
-
-.column:first-child,
-.columns:first-child {
-    margin-left: 0;
-}
-
-.three.columns {
-    width: 30%;
-}
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    
+  }
 
 /*** portfolio images ***/
-.section {
-    flex: 1;
-    flex-basis: 300px;
-    flex-grow: 0;
-    height: 50vh;
-    background: #fff;
-    border: 2px solid #fff;
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, .5);
-    cursor: pointer;
-    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
-    overflow: hidden;
-    position: relative;
-}
 
-.section img {
-    width: 100%;
-    height: 100%;
-    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
-}
 
-.descriptions {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: rgba(255, 255, 255, .7);
-    width: 100%;
-    height: 100%;
-    transition: all .7s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    clip-path: circle(0% at 100% 100%);
-}
 
-.section:hover .descriptions {
-    left: 0px;
-    transition: all .7s ease-in-out;
-    clip-path: circle(75%);
-}
 
-.section:hover {
-    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, .3);
-    transform: scale(1.2);
-    z-index: 9999;
-}
 
-.section:hover img {
-    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
-    transform: scale(1.1);
-    filter: blur(4px);
-}
 
-.section h1 {
-    color: #5cb85c;
-    letter-spacing: 1px;
-    font-size: 2vw;
-}
-
-.section p {
-    line-height: 24px;
-    height: 65%;
-    margin-bottom: 0vw;
-    text-align: justify;
-}
-
-.section button {
-    width: fit-content;
-    height: 40px;
-    cursor: pointer;
-    border-style: none;
-    background-color: #5cb85c;
-    color: #fff;
-    font-size: 15px;
-    outline: none;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, .4);
-    transition: all .5s ease-in-out;
-}
-
-.section button:hover {
-    transform: scale(1.2);
-    transition: all .3s ease-in-out;
-}
+ 
 
 /***** Contact Section *****/
 #contact {
@@ -677,23 +701,66 @@ fa-envelope::before {
 }
 
 /****** Contact Card ******/
-.material-icons {
-    color: #fff;
-    font-size: 34px;
-}
 
-.mail {
-    font-size: 20px;
-}
+input[type=text], select, textarea {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Anton', sans-serif;
+  }
+  
+  input[type=email], select, textarea {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Anton', sans-serif;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-family: 'Anton', sans-serif;
+  }
+  
+  input[type=submit] {
+    background-color: #000000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    margin-top: 2rem;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #303030;
+  }
 
-.fa {
-    color: #fff;
-    font-size: 34px;
-}
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
 
-.button-inside .fa {
-    font-size: 16px;
-}
 
 .main-wrapper {
     width: 200px;
@@ -869,12 +936,12 @@ fa-envelope::before {
 @media (max-width: 768px) {
     .wrap {
         width: 16vh;
-        height: 16vh;
+        height: 20vh;
         left: 40vw;
     }
 
     .intro_container p {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .wrap2 {
@@ -907,67 +974,7 @@ fa-envelope::before {
         padding: 0 0 3.125em 0;
     }
 
-    .cbp-contentslider h3[class^="icon-"]::before, .cbp-contentslider h3[class*=" icon-"]::before {
-        top: -2px;
-        font-size: 10vw;
-    }
-
-    .cbp-contentslider [class^="icon-"]::before, .cbp-contentslider [class*=" icon-"]::before {
-        left: 15%;
-    }
-
-    .cbp-contentslider h3 {
-        font-size: 2em;
-        height: 2.7em;
-        line-height: 2.7em;
-    }
-
-    .cbp-contentslider p {
-        font-size: 2vh;
-        line-height: 3vh;
-    }
-
-    .cbp-contentslider nav a span {
-        font-size: 0.65rem;
-        top: 0.8vh;
-        position: relative;
-    }
-
-    .cbp-content {
-        position: relative;
-        top: 1vh;
-    }
-
-    .section {
-        height: 20vh;
-    }
-
-    .section h1 {
-        letter-spacing: 0em;
-        font-size: 2.5vw;
-        position: relative;
-        top: -1.5vh;
-    }
-
-    .section p {
-        line-height: 1.5em;
-        font-size: 0.7rem;
-        position: relative;
-        top: -2vh;
-        overflow-x: auto;
-    }
-
-    .section button {
-        height: 2vh;
-        font-size: 0.7em;
-        position: relative;
-        top: -0.8vh;
-    }
-
-    .section button:hover {
-        transform: scale(1.1);
-        transition: all .3s ease-in-out;
-    }
+    
 
     .main-wrapper {
         left: 25vw;
@@ -999,10 +1006,7 @@ fa-envelope::before {
 /*** @media (max-width: 414px) ***/
 
 @media (max-width: 414px) {
-    .wrap {
-        left: 37vw;
-    }
-
+    
     .intro_container p {
         font-size: 1.5rem;
     }
@@ -1067,43 +1071,7 @@ fa-envelope::before {
         position: relative;
     }
 
-    .cbp-contentslider h3 {
-        font-size: 1.1em;
-        height: 3.7em;
-        line-height: 3.5em;
-    }
-
-    .cbp-contentslider h3[class^="icon-"]::before, .cbp-contentslider h3[class*=" icon-"]::before {
-        top: 0.3vh;
-        font-size: 12vw;
-    }
-
-    .cbp-contentslider [class^="icon-"]::before, .cbp-contentslider [class*=" icon-"]::before {
-        left: -32%;
-        font-size: 1.5em;
-    }
-
-    .cbp-contentslider li > div {
-        top: 16.5em;
-        height: 52vh;
-    }
-
-    .cbp-contentslider nav a span {
-        font-size: 0.6rem;
-        top: 1.9vh;
-        position: relative;
-        word-wrap: anywhere;
-        line-height: 1.5vh;
-    }
-
-    .cbp-contentslider nav a.rc-active {
-        color: transparent;
-    }
-
-    .cbp-contentslider p {
-        padding: 3vh 0vh 0vh;
-    }
-
+   
     #portfolio {
         padding-bottom: 16vh;
     }
@@ -1117,14 +1085,6 @@ fa-envelope::before {
         margin-left: 3vw;
     }
 
-    .section {
-        height: 50vh;
-    }
-
-    .section p {
-        font-size: 0.9rem;
-        top: 1vh;
-    }
 
     #portfolio .row {
         margin-top: 0vh;
@@ -1133,28 +1093,9 @@ fa-envelope::before {
         top: 3vh;
     }
 
-    .descriptions {
-        padding-left: 6vw;
-        padding-right: 6vw;
-    }
-
-    .section button {
-        height: 4vh;
-        font-size: 1em;
-    }
-
-    .main-wrapper {
-        left: 15vw;
-        top: 28vh;
-    }
-
-    .section:hover {
-        transform: scale(1.05);
-    }
     
-    .section:hover img {
-        transform: scale(1.04);
-    }
+
+    
 
 }
 
@@ -1163,26 +1104,6 @@ fa-envelope::before {
 @media (max-width: 375px) {
     .stroke li {
         margin-left: 4vw;
-    }
-
-    .cbp-contentslider h3 {
-        font-size: 1em;
-    }
-
-    .cbp-content {
-        top: -2vh;
-    }
-
-    .main {
-        width: 105%;
-    }
-
-    .cbp-contentslider [class^="icon-"]::before, .cbp-contentslider [class*=" icon-"]::before {
-        left: -38%;
-    }
-
-    .cbp-contentslider nav a span {
-        font-size: 0.57rem;
     }
 
     .main-wrapper {
@@ -1212,13 +1133,6 @@ fa-envelope::before {
         width: 80vw;
     }
 
-    .cbp-content {
-        top: -3vh;
-    }
-
-    .cbp-contentslider nav a span {
-        font-size: 0.5rem;
-    }
 
     .section button {
         top: 2vh;
